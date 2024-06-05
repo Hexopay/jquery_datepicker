@@ -9,7 +9,7 @@ module JqueryDatepicker
       input_tag = JqueryDatepicker::InstanceTag.new(object_name, method, self, options.merge(type: "text"))
       html = input_tag.render
       method = timepicker ? "datetimepicker" : "datepicker"
-      html += javascript_tag("jQuery(document).ready(function(){jQuery('##{input_tag.get_id}').#{method}(#{input_tag.dp_options.to_json})});")
+      html += javascript_tag("$(document).ready(function(){$('##{input_tag.get_id}').#{method}(#{input_tag.dp_options.to_json})});")
       html.html_safe
     end
   end
